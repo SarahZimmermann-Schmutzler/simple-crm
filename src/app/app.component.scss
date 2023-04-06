@@ -13,7 +13,7 @@
 
 .logo-container {
     min-height: 56px;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     padding-left: 16px;
     padding-right: 16px;
     display: flex;
@@ -39,11 +39,16 @@ ul {
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(0,0,0,0.1);
+            background-color: rgba(0,0,0,0.04);
         }
 
         mat-icon {
             margin-right: 16px;
         }
     }
+}
+
+.router-container {
+    padding-left: 56px;
+    padding-top: 16px;
 }
