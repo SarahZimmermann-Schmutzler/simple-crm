@@ -56,7 +56,6 @@ export class DialogAddUserComponent {
   }
 
   deactivateFields(fN: any, lN: any, birth: any, str: any, nr: any, code: any, ct: any, cancelbtn: any, savebtn: any) {
-    console.log('hallo')
     fN.disabled = true;
     lN.disabled = true;
     birth.disabled = true;
@@ -64,19 +63,18 @@ export class DialogAddUserComponent {
     nr.disabled = true;
     code.disabled = true;
     ct.disabled = true;
-    cancelbtn.disabled = true;
-    savebtn.disabled = true;
+    // cancelbtn.disabled = true;
+    // savebtn.disabled = true;
   }
 
-  activateFields(firstName: any, lastName: any, birth: any, street: any, number: any, zipcode: any, city: any, cancelbtn: any, savebtn: any) {
-    console.log('tschüss')
-    // firstName.disabled = false;
-    // lastName.disabled = false;
-    // birth.disabled = false;
-    // street.disabled = false;
-    // number.disabled = false;
-    // zipcode.disabled = false;
-    // city.disabled = false;
+  activateFields(fN: any, lN: any, birth: any, str: any, nr: any, code: any, ct: any, cancelbtn: any, savebtn: any) {
+    fN.disabled = false;
+    lN.disabled = false;
+    birth.disabled = false;
+    str.disabled = false;
+    nr.disabled = false;
+    code.disabled = false;
+    ct.disabled = false;
     // cancelbtn.disabled = false;
     // savebtn.disabled = false;
   }
