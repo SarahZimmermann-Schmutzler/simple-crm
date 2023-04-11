@@ -12,13 +12,13 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   coll = collection(this.firestore, 'users')
   loading = false;
-  @ViewChild('firstName') firstName!: ElementRef;
-  @ViewChild('lastName') lastName!: ElementRef;
+  @ViewChild('fN') fN!: ElementRef;
+  @ViewChild('lN') lN!: ElementRef;
   @ViewChild('birth') birth!: ElementRef;
-  @ViewChild('street') street!: ElementRef;
-  @ViewChild('number') number!: ElementRef;
-  @ViewChild('zipcode') zipcode!: ElementRef;
-  @ViewChild('city') city!: ElementRef;
+  @ViewChild('str') str!: ElementRef;
+  @ViewChild('nr') nr!: ElementRef;
+  @ViewChild('code') code!: ElementRef;
+  @ViewChild('ct') ct!: ElementRef;
   @ViewChild('cancelbtn') cancelbtn!: ElementRef;
   @ViewChild('savebtn') savebtn!: ElementRef;
 
@@ -29,63 +29,55 @@ export class DialogAddUserComponent {
   }
 
   saveUser() {
+    let fN = this.fN.nativeElement;
+    let lN = this.lN.nativeElement;
+    let birth = this.birth.nativeElement;
+    let str = this.str.nativeElement;
+    let nr = this.nr.nativeElement;
+    let code = this.code.nativeElement;
+    let ct = this.ct.nativeElement;
+    let cancelbtn = this.cancelbtn.nativeElement;
+    let savebtn = this.savebtn.nativeElement;
+
     this.user.birthDate = this.birthDate.getTime();
     console.log('current user is', this.user);
     this.loading = true;
-    this.deactivateFields();
+    this.deactivateFields(fN, lN, birth, str, nr, code, ct, cancelbtn, savebtn);
     // setDoc(doc(this.coll), this.user.toJSON()).then((result:any) => {
     //   console.log('Adding user finished', result);
     // });
     // lieber mit addDoc arbeiten
     addDoc(this.coll, this.user.toJSON()).then((result:any) => {
       this.loading = false;
-      this.activateFields();
+      this.activateFields(fN, lN, birth, str, nr, code, ct, cancelbtn, savebtn);
       console.log('Adding user finished', result);
     });
     // muss mit toJSON() in ein JSON umgewandelt werden, da firebase nur JSONS und keine Objekte speichern kann
   }
 
-  deactivateFields() {
-    let firstName = this.firstName.nativeElement
-    let lastName = this.lastName.nativeElement
-    let birth = this.birth.nativeElement
-    let street = this.street.nativeElement
-    let number = this.number.nativeElement
-    let zipcode = this.zipcode.nativeElement
-    let city = this.city.nativeElement
-    let cancelbtn = this.cancelbtn.nativeElement
-    let savebtn = this.savebtn.nativeElement
-
-    firstName.disable = true;
-    lastName.disable = true;
-    birth.disable = true;
-    street.disable = true;
-    number.disable = true;
-    zipcode.disable = true;
-    city.disable = true;
-    cancelbtn.disable = true;
-    savebtn.disable = true;
+  deactivateFields(fN: any, lN: any, birth: any, str: any, nr: any, code: any, ct: any, cancelbtn: any, savebtn: any) {
+    console.log('hallo')
+    fN.disabled = true;
+    lN.disabled = true;
+    birth.disabled = true;
+    str.disabled = true;
+    nr.disabled = true;
+    code.disabled = true;
+    ct.disabled = true;
+    cancelbtn.disabled = true;
+    savebtn.disabled = true;
   }
 
-  activateFields() {
-    let firstName = this.firstName.nativeElement
-    let lastName = this.lastName.nativeElement
-    let birth = this.birth.nativeElement
-    let street = this.street.nativeElement
-    let number = this.number.nativeElement
-    let zipcode = this.zipcode.nativeElement
-    let city = this.city.nativeElement
-    let cancelbtn = this.cancelbtn.nativeElement
-    let savebtn = this.savebtn.nativeElement
-
-    firstName.disable = false;
-    lastName.disable = false;
-    birth.disable = false;
-    street.disable = false;
-    number.disable = false;
-    zipcode.disable = false;
-    city.disable = false;
-    cancelbtn.disable = false;
-    savebtn.disable = false;
+  activateFields(firstName: any, lastName: any, birth: any, street: any, number: any, zipcode: any, city: any, cancelbtn: any, savebtn: any) {
+    console.log('tschüss')
+    // firstName.disabled = false;
+    // lastName.disabled = false;
+    // birth.disabled = false;
+    // street.disabled = false;
+    // number.disabled = false;
+    // zipcode.disabled = false;
+    // city.disabled = false;
+    // cancelbtn.disabled = false;
+    // savebtn.disabled = false;
   }
 }
