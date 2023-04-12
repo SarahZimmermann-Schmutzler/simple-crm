@@ -10,24 +10,14 @@
                 <th>Zipcode</th>
                 <th>City</th>
             </tr>
-            <tr>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-            </tr>
-
-            <tr>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
-                <td>asasas</td>
+            <tr *ngFor="let user of allUsers">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.birthDate}}</td>
+                <td>{{user.street}}</td>
+                <td>{{user.number}}</td>
+                <td>{{user.zipcode}}</td>
+                <td>{{user.city}}</td>
             </tr>
         </table>
     </mat-card-content>
