@@ -18,6 +18,12 @@
     padding-right: 16px;
     display: flex;
     align-items: center;
+
+    img {
+        // max-width: 100%;
+        height: 48px;
+        object-fit: contain;
+    }
 }
 
 mat-toolbar, mat-toolbar-row {
