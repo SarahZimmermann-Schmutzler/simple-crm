@@ -14,7 +14,9 @@ export class DialogAddUserComponent {
   coll = collection(this.firestore, 'users')
   loading = false;
 
-  constructor(public firestore: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
+  constructor(
+    public firestore: Firestore, 
+    public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
 
   cancel() {
     this.dialogRef.close();
