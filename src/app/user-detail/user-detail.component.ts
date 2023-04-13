@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collectionData, doc, docData } from '@angular/fire/firestore';
+import { doc, docData } from '@angular/fire/firestore';
 import { Firestore, collection } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -33,5 +33,13 @@ export class UserDetailComponent implements OnInit {
       this.user = new User(user);
       // console.log('Retrieved user', this.user)
     })
+  }
+
+  editAddressInfo() {
+
+  }
+
+  editUserInfo() {
+
   }
 }
