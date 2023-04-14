@@ -29,6 +29,5 @@ export class DialogEditAddressComponent {
       this.loading = false;
       this.dialogRef.close();
     });
-
   }
 }
